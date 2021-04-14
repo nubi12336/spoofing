@@ -1,0 +1,1 @@
+{ "_id" : ObjectId("60773bb1df15a255479cefbe"), "proto" : "UDP", "port" : 53, "timestamp" : "1618426740811443533", "reqbytes" : 330, "resbytes" : 28730, "hmac" : "7e4295efe160946effc7f97f382a36d9b218381f07dc66efc1d80af25d733d54" }
